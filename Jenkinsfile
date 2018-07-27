@@ -19,19 +19,19 @@ stages{
           script{
             sh "mvn --version"
               sh "echo $mvnaction"
-              if ($mvnaction == "Clean")
+              if ("${mvnaction}" == "Clean")
                     {
                     sh "mvn clean"
                     }
-               else if ($mvnaction == "Compile")
+              else if ("${mvnaction}" == "Compile")
                     {
                     sh "mvn clean compile"
                     }
-               else if ($mvnaction == "Test")
+               else if ("${mvnaction}" == "Test")
                     {
                     sh "mvn clean test"
                     }
-                 else ($mvnaction == "Install")
+                 else ("${mvnaction}" == "Install")
                     {
                     sh "mvn clean install"
                     }
