@@ -2,7 +2,7 @@ pipeline{
 
     agent {
       docker {
-         image maven
+         image 'maven'
              }
          }
 
