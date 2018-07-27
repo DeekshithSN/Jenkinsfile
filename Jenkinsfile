@@ -14,7 +14,7 @@ parameters {
     
     
     options {
-      timeout(time: 30,unit: 'SECONDS')
+      timeout(time: 30,unit: 'MINUTES')
       disableConcurrentBuilds()
     }
 
