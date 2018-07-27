@@ -18,6 +18,7 @@ stages{
       steps{
           script{
             sh "mvn --version"
+              sh "echo $mvnaction"
 
 }
 
