@@ -11,6 +11,12 @@ parameters {
       choices: 'Clean\nCompile\nTest\nInstall',
       description: 'based on selection jenkins will run resepective maven command')
     }
+    
+    
+    options {
+      timeout(time: 30,unit: 'SECONDS')
+      disableConcurrentBuilds()
+    }
 
 stages{
     stage('build')
