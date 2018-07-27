@@ -17,25 +17,7 @@ stages{
         {
       steps{
           script{
-              if ($mvnaction == "Clean")
-                    {
-                    sh "mvn clean"
-                    }
-              if ($mvnaction == "Compile")
-                    {
-                    sh "mvn clean compile"
-                    }
-              if ($mvnaction == "Test")
-                    {
-                    sh "mvn clean test"
-                    }
-              if ($mvnaction == "Install")
-                    {
-                    sh "mvn clean install"
-                    }
-                }
-            }
-        }
+            sh "mvn --version"
 
 }
 
