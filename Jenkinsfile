@@ -11,11 +11,10 @@ pipeline {
         stage('Example') {
             steps {
                def Dis= ${params.display}
-                if(${Dis})
-                {
+                echo $Dis
                 echo "${params.name}"
                 echo "${params.Projecttype}"
-                }
+                
             }
         }
 
