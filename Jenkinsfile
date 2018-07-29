@@ -9,11 +9,11 @@ pipeline {
         }
 //defining environment variable and we can print all environment variables with printenv        
         stage('Example1') {
-            environment { 
-                DEBUG_FLAGS = '-g'
-            }
-            steps {
-                sh 'printenv'
+            parameters
+            {
+            string (name:'name', defaultValue: 'Jenkins' , description: 'please enter your name')
+            choice(name:'Projecttype', choices: 'Maven\nGradle' description: 'select project type')
+            boolean(name:'display' , defaultValue: 'true', description: 'do you want to display on logs')
             }
         }
 
