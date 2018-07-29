@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-               def Dis= ${params.display}
-                echo $Dis
+         
+                echo params.display
                 echo "${params.name}"
                 echo "${params.Projecttype}"
                 
