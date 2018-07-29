@@ -11,7 +11,7 @@ pipeline {
         stage('Example') {
             steps {
                 script{
-              if("${params.display}")
+              if("${params.display}" == true )
                 {
                 echo "${params.display}"
                 echo "${params.name}"
