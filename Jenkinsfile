@@ -11,7 +11,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo "${params.display}"
-                if(display)
+                if( ${params.display} )
                 {
                 echo "${params.name}"
                 echo "${params.Projecttype}"
