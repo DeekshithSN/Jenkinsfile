@@ -13,7 +13,7 @@ pipeline {
             {
             string (name:'name', defaultValue: 'Jenkins' , description: 'please enter your name')
             choice(name:'Projecttype', choices: 'Maven\nGradle', description: 'select project type')
-            boolean(name:'display' , defaultValue: 'true', description: 'do you want to display on logs')
+            booleanParam(name:'display' , defaultValue: true, description: 'do you want to display on logs')
             }
         }
 
