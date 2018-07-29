@@ -10,13 +10,14 @@ pipeline {
     stages {
         stage('Example') {
             steps {
+                script{
               if(true)
                 {
                 echo "${params.display}"
                 echo "${params.name}"
                 echo "${params.Projecttype}"
                 }
-                
+                }
             }
         }
 
