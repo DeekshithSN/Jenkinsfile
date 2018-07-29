@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
+                echo "${params.display}"
                 if(display)
                 {
                 echo "${params.name}"
