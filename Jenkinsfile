@@ -12,7 +12,7 @@ stages{
         {
       steps{
           script{
-            echo $ARTIFACTORY_CREDS
+              echo "${ARTIFACTORY_CREDS}"
 }
 
 }
