@@ -7,7 +7,7 @@ stages{
         {
       steps{
           script{
-            echo "Helloo"
+            echo $Helloo
                 }
             }
          }
