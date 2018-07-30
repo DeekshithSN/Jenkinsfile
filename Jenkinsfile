@@ -2,20 +2,26 @@ pipeline{
 
     agent any
    
-
-    environment
-    {
-    ARTIFACTORY_CREDS = credentials ('ci-read-aos-bint')
-    }
 stages{
     stage('build')
         {
       steps{
           script{
-            echo $ARTIFACTORY_CREDS
-}
-
-}
- }
-}
+            echo "Helloo"
+                }
+            }
+         }
+       }
+    
+ post{
+        always{
+        echo "from always"
+        }
+        success{
+        echo "from success"
+        }
+        failure{
+        echo "Send eamil as its failed "
+        }
+    }
 }
