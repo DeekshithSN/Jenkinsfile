@@ -18,30 +18,16 @@ parameters {
       disableConcurrentBuilds()
     }
 
+    environment
+    {
+    ARTIFACTORY_CREDS = credentials ('ci-read-aos-bint')
+    }
 stages{
     stage('build')
         {
       steps{
           script{
-            sh "mvn --version"
-              sh "echo $mvnaction"
-              if ("${mvnaction}" == "Clean")
-                    {
-                    sh "mvn clean"
-                    }
-              else if ("${mvnaction}" == "Compile")
-                    {
-                    sh "mvn clean compile"
-                    }
-               else if ("${mvnaction}" == "Test")
-                    {
-                    sh "mvn clean test"
-                    }
-                 else ("${mvnaction}" == "Install")
-                    {
-                    sh "mvn clean install"
-                    }
-
+            echo $ARTIFACTORY_CREDS
 }
 
 }
