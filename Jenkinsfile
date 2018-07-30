@@ -1,26 +1,16 @@
 pipeline{
 
-    agent {
-        docker {
-        image 'maven'
-        args '-v $HOME/.m2:/root/m2'
-        }
-    }
+    agent {dockerfile true}
    
 stages{
     stage('build')
         {
       steps{
           script{
-           sh 'mvn clean install'
+           sh 'node --version'
+           sh 'svn --version'
                 }
             }
          }
-       }
-    
-
+       } 
 }
-/* as docker container always fresh thing every time you run this job it will try to download dependencies so it might 
-slower entire pipeline , so what we did here is we have mapped host machine .m2 cache to container .m2 so it wont download 
-old dependencies it will pull from .m2 folder by this we can improve the performance.
-*/
