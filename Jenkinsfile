@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        any
+         label 'rosdaos'
+    }
+    
     stages {
         stage('Example') {
             input {
