@@ -1,8 +1,6 @@
 pipeline {
-    agent {
-        any
-         label 'rosdaos'
-    }
+    agent any
+    label 'rosdaos'
     
     stages {
         stage('Example') {
