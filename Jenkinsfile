@@ -1,50 +1,18 @@
-pipeline{
-
-    agent {
-      docker {
-         image 'maven'
-             }
-         }
-
-parameters {
-      choice(name:'mvnaction',
-      choices: 'Clean\nCompile\nTest\nInstall',
-      description: 'based on selection jenkins will run resepective maven command')
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
     }
-    
-    
-    options {
-      timeout(time: 30,unit: 'MINUTES')
-      disableConcurrentBuilds()
-    }
-
-stages{
-    stage('build')
-        {
-      steps{
-          script{
-            sh "mvn --version"
-              sh "echo $mvnaction"
-              if ("${mvnaction}" == "Clean")
-                    {
-                    sh "mvn clean"
-                    }
-              else if ("${mvnaction}" == "Compile")
-                    {
-                    sh "mvn clean compile"
-                    }
-               else if ("${mvnaction}" == "Test")
-                    {
-                    sh "mvn clean test"
-                    }
-                 else ("${mvnaction}" == "Install")
-                    {
-                    sh "mvn clean install"
-                    }
-
-}
-
-}
- }
-}
 }
