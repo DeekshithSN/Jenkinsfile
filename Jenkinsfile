@@ -23,8 +23,6 @@ stages{
           timeout(time: 1, unit: 'HOURS') {
               def qg = waitForQualityGate()
               if (qg.status != 'OK') {
-                   color: 'danger', 
-                   message: 'SonarQube Analysis Failed', 
                    error "Pipeline aborted due to quality gate failure: ${qg.status}"
               }
           }
