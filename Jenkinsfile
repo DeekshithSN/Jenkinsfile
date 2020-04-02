@@ -8,7 +8,16 @@ pipeline{
     }
    
 stages{
-    stage('build')
+    stage('sonar')
+        {
+      steps{
+          script{
+           sh 'mvn clean sonar:sonar'
+                }
+            }
+         }
+    
+      stage('build')
         {
       steps{
           script{
