@@ -12,7 +12,10 @@ stages{
         {
       steps{
           script{
-           sh 'mvn clean sonar:sonar'
+              withSonarQubeEnv('sonarserver') { 
+          sh "mvn sonar:sonar"
+        }
+           
                 }
             }
          }
