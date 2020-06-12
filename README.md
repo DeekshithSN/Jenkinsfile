@@ -1,3 +1,3 @@
 This is to commit based job : yes 
 
-This is commit 
+This is commit message
