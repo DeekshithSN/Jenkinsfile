@@ -11,8 +11,13 @@ pipeline {
                     string(name: 'Password', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
             }
-            
-            stage('Example1') {
+
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+                echo "Hello, ${Password}, nice to meet you."
+            }
+        }
+          stage('Example1') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
@@ -23,12 +28,7 @@ pipeline {
                 }
             }
             }
-            
-            
-            steps {
-                echo "Hello, ${PERSON}, nice to meet you."
-                echo "Hello, ${Password}, nice to meet you."
-            }
-        }
+        
+        
     }
 }
