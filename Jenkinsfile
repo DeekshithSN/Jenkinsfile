@@ -22,6 +22,7 @@ pipeline {
                     string(name: 'Password', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
             }
+            }
             
             
             steps {
