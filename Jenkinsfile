@@ -31,7 +31,7 @@ stages{
                     {
                     sh "mvn clean test"
                     }
-                 else ("${mvnaction}" == "Install")
+                 else if ("${mvnaction}" == "Install")
                     {
                     sh "mvn clean install"
                     }
