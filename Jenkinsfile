@@ -19,4 +19,11 @@ pipeline {
         }
 
     }
+    
+    post {
+        always {
+            echo "git url in this job is ${env.GIT_URL}"
+        }
+    
+    }
 }
