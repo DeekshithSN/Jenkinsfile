@@ -11,7 +11,7 @@ pipeline {
             }
         }
         
-        stage('Example') {
+        stage('Example1') {
              when {
                not { branch 'whenBranch' }
             }
