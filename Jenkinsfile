@@ -1,26 +1,15 @@
 pipeline {
     agent any
-     parameters
-            {
-            string (name:'name', defaultValue: 'Jenkins' , description: 'please enter your name')
-            choice(name:'Projecttype', choices: 'Maven\nGradle', description: 'select project type')
-            booleanParam(name:'display' , defaultValue: true, description: 'do you want to display name and choices on logs')
-            }
-  
+    options {
+        timeout(time: 1, unit: 'MINUTE') 
+        timestamps()
+        retry(3) 
+    }
     stages {
         stage('Example') {
             steps {
-                script{
-                    echo "${params.display}"
-              if("${params.display}" == "true" )
-                {
-                echo "${params.display}"
-                echo "${params.name}"
-                echo "${params.Projecttype}"
-                }
-                }
+                echo 'Hello World'
             }
         }
-
     }
 }
