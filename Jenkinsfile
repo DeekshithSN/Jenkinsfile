@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Example') {
              when {
-                branch 'whenBranch'
+                branch 'origin/whenBranch'
             }
 
             steps {
