@@ -9,6 +9,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
+                sh 'sleep 30000'
             }
         }
     }
