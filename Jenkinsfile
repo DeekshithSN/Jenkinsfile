@@ -3,12 +3,21 @@ pipeline {
     stages {
         stage('Example') {
              when {
-                branch 'production'
+                branch 'whenBranch'
             }
 
             steps {
-                echo "Hello, ${PERSON}, nice to meet you."
-                echo "Hello, ${Password}, nice to meet you."
+               echo "this is first branch"
+            }
+        }
+        
+        stage('Example') {
+             when {
+               not { branch 'whenBranch' }
+            }
+
+            steps {
+               echo "this is second branch"
             }
         }
       
