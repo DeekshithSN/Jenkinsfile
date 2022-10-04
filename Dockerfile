@@ -7,5 +7,5 @@ RUN npm install
 EXPOSE 1004
 RUN apt-get update -y 
 RUN apt-get install libcap2-bin -y 
-USER admin-api
+USER admin
 CMD ["npm","start"]
